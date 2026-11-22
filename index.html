@@ -70,6 +70,25 @@ body.content-active #main-invitation{display:flex;animation:fadeInMain 2s forwar
 .sparkle{position:absolute;width:18px;height:18px;background:url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C12 5.5 16.5 10 22 10C16.5 10 12 14.5 12 20C12 14.5 7.5 10 2 10C7.5 10 12 5.5 12 0Z" fill="%23B98F33"/></svg>') center/contain no-repeat;animation:twinkle 2s infinite ease-in-out;pointer-events:none}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:.9;transform:scale(1.2) rotate(90deg)}}
 
+/* ---------- FOTOS (se ven completas, sin recortar) ---------- */
+.photo{width:100%;max-width:440px;margin:38px auto 8px;padding:10px;background:#fff;border:1px solid var(--gold-light);border-radius:6px;box-shadow:0 14px 38px rgba(74,58,122,.25)}
+.photo img{display:block;width:100%;height:auto;max-height:80vh;object-fit:contain;border-radius:3px;margin:0 auto}
+.photo.top{margin-top:0;margin-bottom:38px}
+
+/* ---------- HERO con foto 1 de fondo ---------- */
+.sec.hero{
+  min-height:min(100vh,860px);
+  justify-content:flex-end;
+  padding:0 26px 76px;
+  background:
+    linear-gradient(to bottom,rgba(30,20,60,0) 0%,rgba(30,20,60,.12) 38%,rgba(30,20,60,.78) 100%),
+    url('assets/1.jpg') center top/cover no-repeat;
+}
+.hero .tag{color:#fff;text-shadow:0 2px 12px rgba(30,20,60,.6)}
+.hero .script{margin-bottom:14px;filter:drop-shadow(0 2px 10px rgba(30,20,60,.55))}
+.hero .serif{color:#fff;text-shadow:0 2px 12px rgba(30,20,60,.7)}
+@media(max-width:400px){.sec.hero{padding:0 18px 60px;min-height:100vh}}
+
 /* botones */
 .btn{display:inline-block;background:linear-gradient(135deg,var(--lilac),var(--lilac-deep));color:#fff;padding:17px 34px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:2px;transition:all .4s ease;margin-top:28px;box-shadow:0 8px 20px rgba(74,58,122,.3)}
 .btn:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(74,58,122,.4)}
@@ -90,7 +109,7 @@ body.content-active #main-invitation{display:flex;animation:fadeInMain 2s forwar
 
 /* itinerario */
 .timeline{width:100%;max-width:360px;margin-top:10px}
-.t-row{padding:22px 0;border-bottom:1px solid rgba(185,143,51,.35)}
+.t-row{padding:20px 0;border-bottom:1px solid rgba(185,143,51,.35)}
 .t-row:last-child{border-bottom:none}
 .t-row .data{font-size:30px}
 
@@ -127,6 +146,7 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
   .envelope::before,.envelope::after{border-left-width:150px;border-right-width:150px;border-top-width:97px;border-bottom-width:97px}
   .front-flap{border-left-width:150px;border-right-width:150px;border-top-width:105px}
   .map-box{height:250px}
+  .photo{padding:7px}
 }
 @media(prefers-reduced-motion:reduce){#intro img,#intro::after{animation-duration:.01s}.fs,.sparkle{animation:none}}
 </style>
@@ -164,20 +184,23 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
 <div class="glass">
 
   <!-- Portada -->
-  <section class="sec">
-    <svg class="icon anim zoom d1" viewBox="0 0 24 24"><path d="M12 2l2.4 6.9L21 9l-5.5 4.3L17 21l-5-3.9L7 21l1.5-7.7L3 9l6.6-.1z" stroke-linejoin="round"/></svg>
+  <section class="sec hero">
     <div class="anim up d1 tag sparkle-wrap">Mis XV Años<div class="sparkle" style="top:-10px;right:-20px"></div><div class="sparkle" style="bottom:-5px;left:-15px;animation-delay:1s"></div></div>
     <h1 class="anim zoom d2 script gold-script">Brianna</h1>
+
     <p class="anim up d3 serif" style="margin-top:14px">
       "Hace quince años mis padres me dieron el regalo de la vida, hoy Dios me permite el regalo de celebrar mis XV años.<br><br>
       Es un momento de alegría que deseo compartir con las personas que más amo.<br><br>
       Gracias por acompañarme y ser parte de este día tan importante."
     </p>
-    <div class="anim up d4" style="font-family:'Pinyon Script',cursive;font-size:40px;color:var(--lilac-deep);margin-top:26px">Con amor: Brianna</div>
+    <div class="anim up d4" style="font-family:'Pinyon Script',cursive;font-size:40px;color:#fff;margin-top:26px;text-shadow:0 2px 12px rgba(30,20,60,.6)">Con amor: Brianna</div>
   </section>
 
   <!-- Fecha, calendario y cuenta atrás -->
   <section class="sec">
+    <!-- FOTO 2 -->
+    <div class="anim zoom d1 photo top"><img src="assets/2.jpg" alt="Brianna" loading="lazy"></div>
+
     <svg class="icon anim zoom d1" viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4 9h16M5 6h14a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1z" stroke-linejoin="round" stroke-linecap="round"/></svg>
     <div class="anim up d1 label sparkle-wrap">Será un honor contar con tu presencia el<div class="sparkle" style="top:-5px;left:-25px"></div></div>
     <div class="anim up d2 data" style="font-size:40px">24 de Abril</div>
@@ -214,6 +237,9 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
     <div class="anim up d2 name-script">Suly Pineda</div>
     <div class="anim up d3" style="font-family:'Cinzel',serif;font-size:20px;color:var(--gold);margin:10px 0">&amp;</div>
     <div class="anim up d3 name-script">Francisco Rivera</div>
+
+    <!-- FOTO 3 -->
+    <div class="anim zoom d4 photo"><img src="assets/3.jpg" alt="Brianna con sus padres" loading="lazy"></div>
   </section>
 
   <!-- Itinerario -->
@@ -221,16 +247,24 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
     <svg class="icon anim zoom d1" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <div class="anim up d1 label sparkle-wrap">Itinerario<div class="sparkle" style="top:-10px;right:-20px"></div></div>
     <div class="timeline">
-      <div class="t-row anim up d2"><div class="data">6:00 p.m.</div><div class="serif" style="font-size:25px">Ceremonia de Acción de Gracias</div></div>
-      <div class="t-row anim up d3"><div class="data">7:30 p.m.</div><div class="serif" style="font-size:25px">Recepción</div></div>
-      <div class="t-row anim up d4"><div class="data">9:00 p.m.</div><div class="serif" style="font-size:25px">Cena</div></div>
+      <div class="t-row anim up d2"><div class="data">18:00 hrs</div><div class="serif" style="font-size:25px">Ceremonia de Acción de Gracias</div></div>
+      <div class="t-row anim up d2"><div class="data">19:30 hrs</div><div class="serif" style="font-size:25px">Recepción</div></div>
+      <div class="t-row anim up d2"><div class="data">20:15 hrs</div><div class="serif" style="font-size:25px">Entrada de la Quinceañera</div></div>
+      <div class="t-row anim up d2"><div class="data">20:25 hrs</div><div class="serif" style="font-size:25px">Vals</div></div>
+      <div class="t-row anim up d2"><div class="data">20:40 hrs</div><div class="serif" style="font-size:25px">Brindis</div></div>
+      <div class="t-row anim up d2"><div class="data">21:15 hrs</div><div class="serif" style="font-size:25px">Cena</div></div>
+      <div class="t-row anim up d2"><div class="data">22:15 hrs</div><div class="serif" style="font-size:25px">Baile Sorpresa</div></div>
+      <div class="t-row anim up d2"><div class="data">23:00 hrs</div><div class="serif" style="font-size:25px">Fiesta</div></div>
     </div>
+
+    <!-- FOTO 4 -->
+    <div class="anim zoom d2 photo"><img src="assets/4.jpg" alt="Brianna" loading="lazy"></div>
   </section>
 
   <!-- Ubicación -->
   <section class="sec">
     <svg class="icon anim zoom d1" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.9-6.5-11A6.5 6.5 0 0112 3.5 6.5 6.5 0 0118.5 10c0 5.1-6.5 11-6.5 11z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3"/></svg>
-    <div class="anim up d1 label sparkle-wrap">Ceremonia 6:00 p.m. y Recepción 7:30 p.m.<div class="sparkle" style="top:-8px;left:-25px"></div></div>
+    <div class="anim up d1 label sparkle-wrap">Ceremonia 18:00 hrs y Recepción 19:30 hrs<div class="sparkle" style="top:-8px;left:-25px"></div></div>
     <div class="anim up d2 data">Hacienda La Purísima</div>
     <p class="anim up d3 serif" style="font-size:19px;margin-top:10px">La ceremonia de acción de gracias se realizará en el jardín del mismo salón.</p>
     <div class="anim up d3" style="font-size:13px;color:var(--muted);margin-top:12px;line-height:1.6">Sur 25 No. 81, esquina calle 4, Col. Leyes de Reforma 1ra Sección, Iztapalapa, CDMX</div>
@@ -238,6 +272,9 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
       <iframe src="https://www.google.com/maps?q=Hacienda+La+Pur%C3%ADsima+Sur+25+81+Leyes+de+Reforma+Iztapalapa+CDMX&output=embed" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa Hacienda La Purísima"></iframe>
     </div>
     <a class="anim up d4 btn" target="_blank" href="https://maps.app.goo.gl/fYJH7XUYM17czTL66">Ver Ubicación</a>
+
+    <!-- FOTO 5 -->
+    <div class="anim zoom d4 photo" style="margin-top:50px"><img src="assets/5.jpg" alt="Brianna" loading="lazy"></div>
   </section>
 
   <!-- Dress code -->
@@ -246,6 +283,9 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
     <div class="anim up d1 label sparkle-wrap">Dress Code<div class="sparkle" style="top:-10px;right:-20px"></div></div>
     <div class="anim up d2 data" style="font-family:'Cinzel',serif;font-size:38px;letter-spacing:5px;margin:20px 0">FORMAL</div>
     <p class="anim up d3 serif" style="font-size:21px">Se solicita amablemente asistir de vestimenta formal.</p>
+
+    <!-- FOTO 6 -->
+    <div class="anim zoom d4 photo"><img src="assets/6.jpg" alt="Brianna" loading="lazy"></div>
   </section>
 
   <!-- Playlist -->
@@ -258,6 +298,9 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
       <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5YGb1XWEqi4lCvSguoxXkG?utm_source=generator&si=cddec17ee9b24dce" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <a class="anim up d4 btn" target="_blank" href="https://open.spotify.com/playlist/5YGb1XWEqi4lCvSguoxXkG?si=396bb1235e744978&pt=0160c0cfa0c0c909fa298b7269f96a29">Agregar Canciones</a>
+
+    <!-- FOTO 7 -->
+    <div class="anim zoom d4 photo" style="margin-top:50px"><img src="assets/7.jpg" alt="Brianna" loading="lazy"></div>
   </section>
 
   <!-- Galería en vivo -->
@@ -270,6 +313,9 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
       <span style="font-size:14px;font-family:'Montserrat',sans-serif;font-style:normal;font-weight:500;color:var(--lilac-deep)">Te sugerimos tener instalada la app de <strong>Google Drive</strong> para subir tus archivos fácilmente.</span>
     </p>
     <a class="anim up d4 btn" target="_blank" href="https://drive.google.com/drive/folders/1Ef140G81Inx7Ep1UPfQtmT1cGj1lrmwC?usp=sharing">Subir mis Fotos</a>
+
+    <!-- FOTO 8 -->
+    <div class="anim zoom d4 photo" style="margin-top:50px"><img src="assets/8.jpg" alt="Brianna" loading="lazy"></div>
   </section>
 
   <!-- Mesa de regalos -->
@@ -278,6 +324,9 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
     <div class="anim up d1 label sparkle-wrap">Mesa de Regalos<div class="sparkle" style="top:-10px;right:-15px"></div></div>
     <div class="anim up d2 data" style="font-size:36px">Lluvia de Sobres</div>
     <p class="anim up d3 serif" style="margin-top:18px;font-size:20px">Tu presencia es mi mayor regalo, pero si deseas tener un detalle conmigo, será con una lluvia de sobres.</p>
+
+    <!-- FOTO 9 -->
+    <div class="anim zoom d4 photo"><img src="assets/9.jpg" alt="Brianna" loading="lazy"></div>
   </section>
 
   <!-- RSVP, pases y deseos -->
@@ -313,7 +362,10 @@ body.content-active .music-btn{opacity:1;visibility:visible;transform:none}
     <div class="anim up d2 data" style="font-size:34px">Muro de los Deseos</div>
     <div class="anim up d3 form-group" style="margin-top:28px"><input type="text" id="wish-name" class="input-line" placeholder="De parte de..."></div>
     <div class="anim up d4 form-group"><textarea id="wish-message" class="input-line" placeholder="Deja un lindo mensaje para Brianna..."></textarea></div>
-    <button onclick="sendWish()" class="anim up d4 btn" style="margin-bottom:60px">Enviar Mensaje</button>
+    <button onclick="sendWish()" class="anim up d4 btn" style="margin-bottom:50px">Enviar Mensaje</button>
+
+    <!-- FOTO 10 -->
+    <div class="anim zoom d4 photo" style="margin-top:0;margin-bottom:50px"><img src="assets/10.jpg" alt="Brianna" loading="lazy"></div>
 
     <div class="anim up d4 gold-script" style="font-family:'Pinyon Script',cursive;font-size:56px;line-height:1.1">Con amor, Brianna</div>
   </section>
